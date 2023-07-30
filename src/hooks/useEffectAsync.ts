@@ -2,7 +2,7 @@ import { DependencyList, EffectCallback, useEffect } from "react";
 
 type EffectResult = void | EffectCallback;
 
-export function useEffectAsync(
+export default function useEffectAsync(
   effect: () => Promise<EffectResult>,
   deps: DependencyList
 ) {

@@ -1,3 +1,3 @@
-import { createViewManager } from "./Viewer";
+import { ViewManager } from "./View";
 
-export { createViewManager };
+export { ViewManager };

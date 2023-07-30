@@ -1,3 +1,5 @@
-import { createViewManager } from "./manager";
+import createUncontrolledClassComponent from "./uncontrolled";
+import { ViewManager } from "./manager";
+import { createFormManager } from "./form";
 
-export { createViewManager };
+export { ViewManager, createUncontrolledClassComponent, createFormManager };

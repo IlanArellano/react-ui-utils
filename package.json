@@ -1,21 +1,24 @@
 {
   "name": "@ihaz/react-ui-utils",
-  "version": "1.0.0",
+  "version": "1.1.2-beta",
   "description": "A general UI common methods for React Projects, supports React Dom and React Native.",
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/esm/index.js",
-  "types": "./lib/esm/index.d.ts",
+  "type": "module",
+  "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "jsnext:main": "lib/index.es.js",
   "files": [
     "lib"
   ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IlanArellano/react-ui-utils.git"
   },
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+    "build": "rollup -c",
+    "test": "jest --watchAll"
   },
   "keywords": [
     "react",
@@ -28,10 +31,22 @@
     "react": ">=16"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "^18.16.2",
     "@types/react": "^18.0.26",
-    "babel-plugin-module-resolver": "^4.1.0",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "react": "^18.2.0",
+    "rollup": "^3.26.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.7",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"
   }
